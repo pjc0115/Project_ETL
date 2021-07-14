@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Techinal Report</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <style>
+    body {
+        font-family: 'Calibri', 'sans-serif';
+        font-size: 16px;
+        font-weight: bold;
+        text-align:center;
+    }
+
+    form {
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+</style>
+</head>
+
+<body>
+<div class="container text-center"></div>
+  <h1 class="jumbotron">ETL PROJECT:  Analyze ebay Pricing</h1>
+  
+    <div>
+      <h4 style="font-weight: bold;" class="container text-left "ul style="list-style: none;">
+          Technical Report
+      <h5 class="container text-left " style="color:rgb(63, 63, 219);">Data Cleanup & Analysis -></h5> 
+      <h5 class="container text-left "ul style="list-style: none;">
+          <ol>
+          <li>The sources of data that you will extract from:  Use webscraping to extract certain elements and attributes from the HTML that will serve as data to upload to MongoDB.</li>
+          <br>
+          <li>The type of transformation needed for this data:  Transformation is used to transform Price from string to float.  Python is used in Pandas in order to perform transformation.</li>
+          <br>
+          <li>The type of final production database to load the data into:  MongoDB is chosen as the database.  Database is created and called Project.</li>
+          <br>
+          <li>The final tables or collections that will be used in the production database:  A single collection called ETL_ebay is created in Project database with MongoDB.</li>
+          </ol>
+              
+
+      <h5 class="container text-left " style="color:rgb(38, 216, 38);">ETL Process -></h5> 
+      <h5 class="container text-left "ul style="list-style: none;">
+          <ol>
+          <li>Import all necessary libraries to Pandas.</li>
+          <br>
+          <li>Ensure correct MongoDB endpoint that writes to the correct Database called Project.  Ensure correct collection in MongoDB.</li>
+          <br>
+          <li>To webscrape, use the ebay URL for luxury men watches from Breitling that would be scraped.</li>
+          <br>
+          <li>Define variables in order to parse the html.</li>
+          <br>
+          <li>Define a variable called listings, use find_all function to store element and class that can subsequently be iterated in a FOR Loop.</li>
+          <br>
+          <li>Loop through listing for link, price and description.  Use insert_one function to insert into ebay_collection.</li>
+          <br>
+          <li>Check number of documents via len function.</li>
+          </ol>
+          
+          
+          {% endfor %}
+          
+      </ul>
+    </div>
+  </div>
+  <div class="container text-center">
+    <h1 class="jumbotron">ANALYSIS: ebay Pricing </h1>
+    <div>
+      <ul style="list-style: none;">
+
+          {% for name in list %}
+          <li>{{ name }}</li>
+          {% endfor %}
+          
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
